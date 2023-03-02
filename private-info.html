@@ -3,37 +3,49 @@
 
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="private-info.css">
+    <link rel="stylesheet" href="styles/private-info.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <style>
-        * {
-            font-family: Roboto;
-        }
-        body {
-            background-color: rgb(41, 43, 110);
-        }
-
-        .heading {
-            position: absolute;
-            right: 50px;
-            left: 50px;
-
-        }
-
-        .heading h1 {
-            color: white;
-            text-shadow: 10px 10px 10px rgba(0, 0, 0, 0.8);
-        }
-    </style>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
 </head>
 
 <body>
-    <div class="heading">
-        <h1>Resumio</h1>
-        <hr>
-    </div>
+    <main>
+        <div class="heading">
+            <h1>Resumio</h1>
+            <hr>
+            <h2>Personal Information</h2>
+        </div>
+
+        <nav class="portfolio-blank">
+            <h1 id="nameTextbox"></h1>
+        </nav>
+
+        <div class="firstinputs">
+            <div class="name-input">
+                <label for="firstname">Please enter your name</label>
+                <input id="enterName" type="text" name="firstname" oninput="firstNameDisplay()" required>
+                <p>Do not use numbers!</p>
+            </div>
+
+            <div class="surname-input">
+                <label for="surname">Please enter your surname</label>
+                <input id="enterSurname" type="text" name="surname" oninput="firstNameDisplay()" required>
+                <p>Do not use numbers!</p>
+            </div>  
+        </nav>
+
+    </main>
+
+    <script>
+        function firstNameDisplay() {
+            var x = document.getElementById('enterName').value;
+            var firstName = document.getElementById('nameTextbox');
+            firstName.innerHTML = x;
+        }
+    </script>
+
+    
 
 </body>
 
